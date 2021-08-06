@@ -1,7 +1,7 @@
 ARG MYSQL_VERSION
 FROM mysql:${MYSQL_VERSION}
 
-LABEL maintainer="Mahmoud Zalt <mahmoud@zalt.me>"
+LABEL maintainer="Ivan Zhang <ivan@haxibiao.com>"
 
 #####################################
 # Set Timezone
@@ -17,4 +17,4 @@ RUN chmod 0444 /etc/mysql/conf.d/my.cnf
 
 CMD ["mysqld"]
 
-EXPOSE 3306
+EXPOSE 3366
