@@ -1039,8 +1039,8 @@ services:
       - ./data/certbot/certs/:/var/certs
       - ./certbot/letsencrypt/:/var/www/letsencrypt
     environment:
-      - CN="fake.domain.com"
-      - EMAIL="fake.email@gmail.com"
+      - CN=${APP_DOMAIN}
+      - EMAIL=${APP_DOMAIN_EMAIL}
     networks:
       - frontend
 
