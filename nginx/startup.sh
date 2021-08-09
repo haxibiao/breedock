@@ -7,6 +7,12 @@ if [ ! -f /etc/nginx/ssl/default.crt ]; then
     chmod 644 /etc/nginx/ssl/default.key
 fi
 
+# enble php laravel etc ..
+if [ -d /etc/nginx/enable ]; then
+	echo "部署更新 nginx enable ..."
+	/bin/cp -rf /etc/nginx/enable/*.conf /etc/nginx/
+fi
+
 # Start crond in background
 crond -l 2 -b
 

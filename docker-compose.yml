@@ -401,6 +401,7 @@ services:
       - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
       - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
       - ${NGINX_SSL_PATH}:/etc/nginx/ssl
+      - ./nginx/enable/:/etc/nginx/enable
       - ./data/certbot/certs/:/var/certs
       - ./certbot/letsencrypt/:/var/www/letsencrypt
     ports:
@@ -948,6 +949,17 @@ services:
       - ${DATA_PATH_HOST}/meilisearch:/var/lib/meilisearch
     ports:
       - "${MEILISEARCH_HOST_PORT}:7700"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "wget",
+          "--no-verbose",
+          "--spider",
+          "http://localhost:7700/health",
+        ]
+      retries: 3
+      timeout: 5s
     networks:
       - frontend
       - backend
