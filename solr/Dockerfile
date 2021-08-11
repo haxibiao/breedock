@@ -17,7 +17,7 @@ ENV SOLR_DATAIMPORTHANDLER_MSSQL ${SOLR_DATAIMPORTHANDLER_MSSQL}
 
 # download mssql connector for dataimporthandler
 RUN if [ ${SOLR_DATAIMPORTHANDLER_MSSQL} = true ]; then \
-    curl -L -o /tmp/mssql-jdbc-7.0.0.jre8.jar "https://github.com/Microsoft/mssql-jdbc/releases/download/v7.0.0/mssql-jdbc-7.0.0.jre8.jar" \
+    curl -L -o /tmp/mssql-jdbc-7.0.0.jre8.jar "https://github.com.cnpmjs.org/Microsoft/mssql-jdbc/releases/download/v7.0.0/mssql-jdbc-7.0.0.jre8.jar" \
        && mkdir -p /opt/solr/contrib/dataimporthandler/lib \
        && mv /tmp/mssql-jdbc-7.0.0.jre8.jar "/opt/solr/contrib/dataimporthandler/lib/mssql-jdbc-7.0.0.jre8.jar" \
 ;fi

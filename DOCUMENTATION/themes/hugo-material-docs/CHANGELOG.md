@@ -7,7 +7,7 @@
 
 Sections such as www.example.com/foo/ will now be rendered with a list of all pages that are part of this section. The list shows the pages' title and a summary of their content.
 
-[Show me the diff](https://github.com/digitalcraftsman/hugo-material-docs/commit/1f8393a8d4ce1b8ee3fc7d87be05895c12810494)
+[Show me the diff](https://github.com.cnpmjs.org/digitalcraftsman/hugo-material-docs/commit/1f8393a8d4ce1b8ee3fc7d87be05895c12810494)
 
 ### 22nd March 2016
 
@@ -26,4 +26,4 @@ Now the theme uses Hugo's own Google Analytics config option. The variable moved
 googleAnalytics = "UA-XXXXXXXX-X"
 ```
 
-[Show me the diff](https://github.com/digitalcraftsman/hugo-material-docs/commit/fa10c8eef935932426d46b662a51f29a5e0d48e2)
+[Show me the diff](https://github.com.cnpmjs.org/digitalcraftsman/hugo-material-docs/commit/fa10c8eef935932426d46b662a51f29a5e0d48e2)

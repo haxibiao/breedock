@@ -28,9 +28,9 @@ cat << EOF > ../official-images/library/jenkins
 # maintainer: Michael Neale <mneale@cloudbees.com> (@michaelneale)
 # maintainer: Carlos Sanchez <csanchez@cloudbees.com> (@carlossg)
 
-latest: git://github.com/jenkinsci/jenkins-ci.org-docker@$master_sha
-$master_version: git://github.com/jenkinsci/jenkins-ci.org-docker@$master_sha
+latest: git://github.com.cnpmjs.org/jenkinsci/jenkins-ci.org-docker@$master_sha
+$master_version: git://github.com.cnpmjs.org/jenkinsci/jenkins-ci.org-docker@$master_sha
 
-alpine: git://github.com/jenkinsci/jenkins-ci.org-docker@$alpine_sha
-$alpine_version-alpine: git://github.com/jenkinsci/jenkins-ci.org-docker@$alpine_sha
+alpine: git://github.com.cnpmjs.org/jenkinsci/jenkins-ci.org-docker@$alpine_sha
+$alpine_version-alpine: git://github.com.cnpmjs.org/jenkinsci/jenkins-ci.org-docker@$alpine_sha
 EOF

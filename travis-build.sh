@@ -26,7 +26,7 @@ if [ -n "${PHP_VERSION}" ]; then
     sed -i -- 's/OCI8=true/OCI8=false/g' .env
     if [ "${PHP_VERSION}" == "5.6" ]; then
         # Aerospike C Client SDK 4.0.7, Debian 9.6 is not supported
-        # https://github.com/aerospike/aerospike-client-php5/issues/145
+        # https://github.com.cnpmjs.org/aerospike/aerospike-client-php5/issues/145
         sed -i -- 's/WORKSPACE_INSTALL_AEROSPIKE=true/WORKSPACE_INSTALL_AEROSPIKE=false/g' .env
         sed -i -- 's/PHP_FPM_INSTALL_AEROSPIKE=true/PHP_FPM_INSTALL_AEROSPIKE=false/g' .env
     fi
@@ -46,7 +46,7 @@ if [ -n "${HUGO_VERSION}" ]; then
     HUGO_BIN=hugo_${HUGO_VERSION}_linux_amd64
 
     # Download hugo binary
-    curl -L https://github.com/spf13/hugo/releases/download/v$HUGO_VERSION/$HUGO_PACKAGE.tar.gz | tar xz
+    curl -L https://github.com.cnpmjs.org/spf13/hugo/releases/download/v$HUGO_VERSION/$HUGO_PACKAGE.tar.gz | tar xz
     mkdir -p $HOME/bin
     mv ./${HUGO_BIN}/${HUGO_BIN} $HOME/bin/hugo
 

@@ -59,7 +59,7 @@ get-digest() {
 }
 
 get-latest-versions() {
-    curl -q -fsSL https://api.github.com/repos/jenkinsci/jenkins/tags?per_page=20 | grep '"name": "jenkins-' | egrep -o '[0-9]+(\.[0-9]+)+' | sort-versions | uniq
+    curl -q -fsSL https://api.github.com.cnpmjs.org/repos/jenkinsci/jenkins/tags?per_page=20 | grep '"name": "jenkins-' | egrep -o '[0-9]+(\.[0-9]+)+' | sort-versions | uniq
 }
 
 publish() {

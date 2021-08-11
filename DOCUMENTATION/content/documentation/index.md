@@ -302,7 +302,7 @@ e) set it to `true`
 
 2 - Re-build the containers `docker-compose build workspace php-fpm`
 
-For information on how to configure xDebug with your IDE and work it out, check this [Repository](https://github.com/LarryEitel/laravel-laradock-phpstorm) or follow up on the next section if you use linux and PhpStorm.
+For information on how to configure xDebug with your IDE and work it out, check this [Repository](https://github.com.cnpmjs.org/LarryEitel/laravel-laradock-phpstorm) or follow up on the next section if you use linux and PhpStorm.
 
 ```
 ###########################################################
@@ -356,7 +356,7 @@ e) set it to `true`
 2 - Re-build the containers `docker-compose build workspace php-fpm`
 
 Note that pcov is only supported on PHP 7.1 or newer. For more information on setting up pcov optimally, check the recommended section
-of the [README](https://github.com/krakjoe/pcov)
+of the [README](https://github.com.cnpmjs.org/krakjoe/pcov)
 
 
 
@@ -933,11 +933,11 @@ run from any cli: <br>`curl -X PURGE https://yourwebsite.com/`.
 ```bash
 composer require jenssegers/mongodb
 ```
-More details about this [here](https://github.com/jenssegers/laravel-mongodb#installation).
+More details about this [here](https://github.com.cnpmjs.org/jenssegers/laravel-mongodb#installation).
 
 7 - Test it:
 
-- First, let your Models extend from the Mongo Eloquent Model. Check the [documentation](https://github.com/jenssegers/laravel-mongodb#eloquent).
+- First, let your Models extend from the Mongo Eloquent Model. Check the [documentation](https://github.com.cnpmjs.org/jenssegers/laravel-mongodb#eloquent).
 - Enter the Workspace Container.
 - Migrate the Database `php artisan migrate`.
 
@@ -1091,7 +1091,7 @@ More details about this [here](https://github.com/jenssegers/laravel-mongodb#ins
     * first set `beanstalkd` as default queue driver
     * set the queue host to beanstalkd : `QUEUE_HOST=beanstalkd`
     *beanstalkd is now available on default port `11300`.*
-3. Require the dependency package [pda/pheanstalk](https://github.com/pda/pheanstalk) using composer.
+3. Require the dependency package [pda/pheanstalk](https://github.com.cnpmjs.org/pda/pheanstalk) using composer.
     Optionally you can use the Beanstalkd Console Container to manage your Queues from a web interface.
     * Run the Beanstalkd Console Container:
     ```bash
@@ -1193,7 +1193,7 @@ docker-compose up -d meilisearch
 ## Use RethinkDB
 
 The RethinkDB is an open-source Database for Real-time Web ([RethinkDB](https://rethinkdb.com/)).
-A package ([Laravel RethinkDB](https://github.com/duxet/laravel-rethinkdb)) is being developed and was released a version for Laravel 5.2 (experimental).
+A package ([Laravel RethinkDB](https://github.com.cnpmjs.org/duxet/laravel-rethinkdb)) is being developed and was released a version for Laravel 5.2 (experimental).
 
 1. Run the RethinkDB Container (`rethinkdb`) with the `docker-compose up` command.
     ```bash
@@ -1278,7 +1278,7 @@ A package ([Laravel RethinkDB](https://github.com/duxet/laravel-rethinkdb)) is b
 <a name="Use-Thumbor"></a>
 ## Use Thumbor
 
-Thumbor is a smart imaging service. It enables on-demand crop, resizing and flipping of images. ([Thumbor](https://github.com/thumbor/thumbor))
+Thumbor is a smart imaging service. It enables on-demand crop, resizing and flipping of images. ([Thumbor](https://github.com.cnpmjs.org/thumbor/thumbor))
 
 1 - Configure Thumbor:
   - Checkout all the options under the thumbor settings
@@ -1460,7 +1460,7 @@ nginx:
 docker-compose up -d mosquitto
 ```
 
-3 - Open your command line and use a MQTT Client (Eg. https://github.com/mqttjs/MQTT.js) to subscribe a topic and publish a message.
+3 - Open your command line and use a MQTT Client (Eg. https://github.com.cnpmjs.org/mqttjs/MQTT.js) to subscribe a topic and publish a message.
 
 4 - Subscribe: `mqtt sub -t 'test' -h localhost -p 9001 -C 'ws' -v`
 
@@ -1806,7 +1806,7 @@ Enabling Global Composer Install during the build for the container allows you t
 <a name="Install-Prestissimo"></a>
 ## Install Prestissimo
 
-[Prestissimo](https://github.com/hirak/prestissimo) is a plugin for composer which enables parallel install functionality.
+[Prestissimo](https://github.com.cnpmjs.org/hirak/prestissimo) is a plugin for composer which enables parallel install functionality.
 
 1 - Enable Running Global Composer Install during the Build:
 
@@ -2145,7 +2145,7 @@ Libfaketime allows you to control the date and time that is returned from the op
 It can be used by specifying a special string in the `PHP_FPM_FAKETIME` variable in the `.env` file.
 For example:
 `PHP_FPM_FAKETIME=-1d`
-will set the clock back 1 day. See (https://github.com/wolfcw/libfaketime) for more information.
+will set the clock back 1 day. See (https://github.com.cnpmjs.org/wolfcw/libfaketime) for more information.
 
 1 - Open the `.env` file
 <br>
@@ -2251,7 +2251,7 @@ A bash prompt that displays information about the current git repository. In par
 4 - Re-build the container `docker-compose build workspace`
 
 **Note** You can configure bash-git-prompt by editing the `workspace/gitprompt.sh` file and re-building the workspace container.
-For configuration information, visit the [bash-git-prompt repository](https://github.com/magicmonty/bash-git-prompt).
+For configuration information, visit the [bash-git-prompt repository](https://github.com.cnpmjs.org/magicmonty/bash-git-prompt).
 
 <br>
 <a name="Install-Oh-My-Zsh"></a>
@@ -2263,7 +2263,7 @@ For configuration information, visit the [bash-git-prompt repository](https://gi
 
 [Oh My Zsh](https://ohmyz.sh/) is a delightful, open source, community-driven framework for managing your Zsh configuration.
 
-[Laravel autocomplete plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/laravel) adds aliases and autocompletion for Laravel Artisan and Bob command-line interfaces.
+[Laravel autocomplete plugin](https://github.com.cnpmjs.org/ohmyzsh/ohmyzsh/tree/master/plugins/laravel) adds aliases and autocompletion for Laravel Artisan and Bob command-line interfaces.
 
 1 - Open the `.env` file
 
@@ -2279,7 +2279,7 @@ For configuration information, visit the [bash-git-prompt repository](https://gi
 
 > With the ZSH autosuggestions plugin.
 
-[ZSH autosuggestions plugin](https://github.com/zsh-users/zsh-autosuggestions) suggests commands as you type based on history and completions.
+[ZSH autosuggestions plugin](https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions) suggests commands as you type based on history and completions.
 
 1 - Enable ZSH as described previously
 
@@ -2346,7 +2346,7 @@ gcloud auth login
 <a name="Speed-MacOS"></a>
 ## Improve speed on MacOS
 
-Docker on the Mac [is slow](https://github.com/docker/for-mac/issues/77), at the time of writing. Especially for larger projects, this can be a problem. The problem is [older than March 2016](https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound/8076) - as it's a such a long-running issue, we're including it in the docs here.
+Docker on the Mac [is slow](https://github.com.cnpmjs.org/docker/for-mac/issues/77), at the time of writing. Especially for larger projects, this can be a problem. The problem is [older than March 2016](https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound/8076) - as it's a such a long-running issue, we're including it in the docs here.
 
 So since sharing code into Docker containers with osxfs have very poor performance compared to Linux. Likely there are some workarounds:
 
@@ -2354,7 +2354,7 @@ So since sharing code into Docker containers with osxfs have very poor performan
 
 ### Workaround A: using dinghy
 
-[Dinghy](https://github.com/codekitchen/dinghy) creates its own VM using docker-machine, it will not modify your existing docker-machine VMs.
+[Dinghy](https://github.com.cnpmjs.org/codekitchen/dinghy) creates its own VM using docker-machine, it will not modify your existing docker-machine VMs.
 
 Quick Setup giude, (we recommend you check their docs)
 
@@ -2393,7 +2393,7 @@ Laradock comes with `sync.sh`, an optional bash script, that automates installin
 
 1) Configure your Laradock environment as you would normally do and test your application to make sure that your sites are running correctly.
 
-2) Make sure to set `DOCKER_SYNC_STRATEGY` on the `.env`. Read the [syncing strategies](https://github.com/EugenMayer/docker-sync/wiki/8.-Strategies) for details.
+2) Make sure to set `DOCKER_SYNC_STRATEGY` on the `.env`. Read the [syncing strategies](https://github.com.cnpmjs.org/EugenMayer/docker-sync/wiki/8.-Strategies) for details.
 ```
 # osx: 'native_osx' (default)
 # windows: 'unison'
@@ -2455,7 +2455,7 @@ Removing and cleaning up the files and the docker-sync container. Use only if yo
 - You may inspect the `sync.sh` script to learn each of the commands and even add custom ones.
 - If a container cannot access the files on docker-sync, you may need to set a user on the Dockerfile of that container with an id of 1000 (this is the UID that nginx and php-fpm have configured on laradock). Alternatively, you may change the permissions to 777, but this is **not** recommended.
 
-Visit the [docker-sync documentation](https://github.com/EugenMayer/docker-sync/wiki) for more details.
+Visit the [docker-sync documentation](https://github.com.cnpmjs.org/EugenMayer/docker-sync/wiki) for more details.
 
 
 
@@ -2466,7 +2466,7 @@ Visit the [docker-sync documentation](https://github.com/EugenMayer/docker-sync/
 
 ### B.2: using the d4m-nfs tool
 
-[D4m-nfs](https://github.com/IFSight/d4m-nfs) automatically mount NFS volume instead of osxfs one.
+[D4m-nfs](https://github.com.cnpmjs.org/IFSight/d4m-nfs) automatically mount NFS volume instead of osxfs one.
 
 1) Update the Docker [File Sharing] preferences:
 
@@ -2474,10 +2474,10 @@ Click on the Docker Icon > Preferences > (remove everything form the list except
 
 2) Restart Docker.
 
-3) Clone the [d4m-nfs](https://github.com/IFSight/d4m-nfs) repository to your `home` directory.
+3) Clone the [d4m-nfs](https://github.com.cnpmjs.org/IFSight/d4m-nfs) repository to your `home` directory.
 
 ```bash
-git clone https://github.com/IFSight/d4m-nfs ~/d4m-nfs
+git clone https://github.com.cnpmjs.org/IFSight/d4m-nfs ~/d4m-nfs
 ```
 
 4) Create (or edit) the file `~/d4m-nfs/etc/d4m-nfs-mounts.txt`, and write the following configuration in it:

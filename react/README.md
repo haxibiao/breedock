@@ -1,4 +1,4 @@
-This project was bootstrapped with [react-redux-boilerplate](https://github.com/Marinashafiq/react-redux-boilerplate).
+This project was bootstrapped with [react-redux-boilerplate](https://github.com.cnpmjs.org/Marinashafiq/react-redux-boilerplate).
 
 ## Available Scripts
 

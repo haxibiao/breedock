@@ -26,7 +26,7 @@ RUN apt-get update \
         /tmp/* \
     && apt-get clean
 
-ADD https://github.com/tianon/gosu/releases/download/$CLICKHOUSE_GOSU_VERSION/gosu-amd64 /bin/gosu
+ADD https://github.com.cnpmjs.org/tianon/gosu/releases/download/$CLICKHOUSE_GOSU_VERSION/gosu-amd64 /bin/gosu
 
 RUN locale-gen en_US.UTF-8
 ENV LANG en_US.UTF-8

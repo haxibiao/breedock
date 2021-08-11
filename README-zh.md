@@ -65,7 +65,7 @@ Laradock 努力简化创建开发环境过程。
 
 1. 将 Laradock 放到你的 Laravel 项目中：
 ```bash
-git clone https://github.com/laradock/laradock.git
+git clone https://github.com.cnpmjs.org/laradock/laradock.git
 ```
 
 2. 进入 Laradock 目录
@@ -191,7 +191,7 @@ Homestead 是一个工具,为你控制虚拟机(使用 Homestead 特殊命令)�
 **A)** 如果你已经有一个 Laravel 项目,克隆这个仓库在到 `Laravel` 根目录
 
 ```bash
-git submodule add https://github.com/laradock/laradock.git
+git submodule add https://github.com.cnpmjs.org/laradock/laradock.git
 ```
 
 >如果你不是使用 Git 管理 Laravel 项目,您可以使用 `git clone` 而不是 `git submodule`。
@@ -199,7 +199,7 @@ git submodule add https://github.com/laradock/laradock.git
 **B)** 如果你没有一个 Laravel 项目,你想 Docker 安装 Laravel,克隆这个源在您的机器任何地方上:
 
 ```bash
-git clone https://github.com/laradock/laradock.git
+git clone https://github.com.cnpmjs.org/laradock/laradock.git
 ```
 
 <a name="Usage"></a>
@@ -208,7 +208,7 @@ git clone https://github.com/laradock/laradock.git
 **请在开始之前阅读:**
 如果你正在使用 **Docker Toolbox** (VM)，选择以下任何一个方法：
 - 更新到 Docker [Native](https://www.docker.com/products/docker) Mac/Windows 版本 (建议). 查看 [Upgrading Laradock](#upgrading-laradock)
-- 使用 Laradock v3.* (访问 `Laradock-ToolBox` [分支](https://github.com/laradock/laradock/tree/Laradock-ToolBox)).
+- 使用 Laradock v3.* (访问 `Laradock-ToolBox` [分支](https://github.com.cnpmjs.org/laradock/laradock/tree/Laradock-ToolBox)).
 如果您使用的是 **Docker Native**(Mac / Windows 版本)甚至是 Linux 版本,通常可以继续阅读这个文档，Laradock v4 以上版本将仅支持 **Docker Native**。
 
 1 - 运行容器: *(在运行 `docker-compose` 命令之前，确认你在 `laradock` 目录中*
@@ -574,11 +574,11 @@ docker-compose up -d mongo
 composer require jenssegers/mongodb
 ```
 
-更多细节内容 [点击这儿](https://github.com/jenssegers/laravel-mongodb#installation).
+更多细节内容 [点击这儿](https://github.com.cnpmjs.org/jenssegers/laravel-mongodb#installation).
 
 7 - 测试:
 
-- 首先让你的模型继承 Mongo 的 Eloquent Model. 查看 [文档](https://github.com/jenssegers/laravel-mongodb#eloquent).
+- 首先让你的模型继承 Mongo 的 Eloquent Model. 查看 [文档](https://github.com.cnpmjs.org/jenssegers/laravel-mongodb#eloquent).
 - 进入 Workspace 容器.
 - 迁移数据库 `php artisan migrate`.
 
@@ -627,7 +627,7 @@ docker-compose build php
 #### B) 切换版本 PHP `7.0` 或 `5.6` 到 PHP `5.5`
 我们已不在本地支持 PHP5.5，但是你按照以下步骤获取：
 
-1 - 克隆 `https://github.com/laradock/php-fpm`.
+1 - 克隆 `https://github.com.cnpmjs.org/laradock/php-fpm`.
 
 2 - 重命名 `Dockerfile-56` 为 `Dockerfile-55`.
 
@@ -725,7 +725,7 @@ server_name laravel.test;
 <a name="Install-Prestissimo"></a>
 ### 安装 Prestissimo
 
-[Prestissimo](https://github.com/hirak/prestissimo) 是一个平行安装功能的 composer 插件。
+[Prestissimo](https://github.com.cnpmjs.org/hirak/prestissimo) 是一个平行安装功能的 composer 插件。
 
 1 - 在安装期间，使全局 Composer Install 正在运行:
 
@@ -804,14 +804,14 @@ docker-compose build --no-cache
 ## 贡献
 这个小项目是由一个有一个全职工作和很多的职责的人建立的,所以如果你喜欢这个项目,并且发现它需要一个 bug 修复或支持或新软件或升级任何容器,或其他任何. . 你是非常欢迎，欢迎毫不不犹豫地贡献吧:)
 
-#### 阅读我们的 [贡献说明](https://github.com/laradock/laradock/blob/master/CONTRIBUTING.md)
+#### 阅读我们的 [贡献说明](https://github.com.cnpmjs.org/laradock/laradock/blob/master/CONTRIBUTING.md)
 
 <a name="Help"></a>
 ## 帮助 & 问题
 
 从聊天室 [Gitter](https://gitter.im/Laradock/laradock) 社区获取帮助和支持.
 
-你也可以打开 Github 上的 [issue](https://github.com/laradock/laradock/issues) (将被贴上问题和答案) 或与大家讨论 [Gitter](https://gitter.im/Laradock/laradock).
+你也可以打开 Github 上的 [issue](https://github.com.cnpmjs.org/laradock/laradock/issues) (将被贴上问题和答案) 或与大家讨论 [Gitter](https://gitter.im/Laradock/laradock).
 
 Docker 或 Laravel 的特别帮助，你可以在 [Codementor.io](https://www.codementor.io/mahmoudz) 上直接和项目创始人在线沟通
 
@@ -819,14 +819,14 @@ Docker 或 Laravel 的特别帮助，你可以在 [Codementor.io](https://www.co
 
 **创始人:**
 
-- [Mahmoud Zalt](https://github.com/Mahmoudz)  (Twitter [@Mahmoud_Zalt](https://twitter.com/Mahmoud_Zalt))
+- [Mahmoud Zalt](https://github.com.cnpmjs.org/Mahmoudz)  (Twitter [@Mahmoud_Zalt](https://twitter.com/Mahmoud_Zalt))
 
 **优秀的人:**
 
-- [Contributors](https://github.com/laradock/laradock/graphs/contributors)
-- [Supporters](https://github.com/laradock/laradock/issues?utf8=%E2%9C%93&q=)
+- [Contributors](https://github.com.cnpmjs.org/laradock/laradock/graphs/contributors)
+- [Supporters](https://github.com.cnpmjs.org/laradock/laradock/issues?utf8=%E2%9C%93&q=)
 
 
 ## 许可证
 
-[MIT License](https://github.com/laradock/laradock/blob/master/LICENSE) (MIT)
+[MIT License](https://github.com.cnpmjs.org/laradock/laradock/blob/master/LICENSE) (MIT)

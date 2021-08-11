@@ -1,4 +1,4 @@
-# Configuration for Github probot-stale - https://github.com/probot/stale
+# Configuration for Github probot-stale - https://github.com.cnpmjs.org/probot/stale
 
 # Number of days of inactivity before an issue becomes stale
 daysUntilStale: 90
