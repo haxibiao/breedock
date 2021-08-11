@@ -408,6 +408,8 @@ services:
       - "${NGINX_HOST_HTTP_PORT}:80"
       - "${NGINX_HOST_HTTPS_PORT}:443"
       - "${VARNISH_BACKEND_PORT}:81"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       - php-fpm
     networks:
