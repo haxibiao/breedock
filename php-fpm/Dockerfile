@@ -1168,7 +1168,7 @@ COPY ./xlaravel.pool.conf /usr/local/etc/php-fpm.d/
 USER root
 
 # 安装ps命令,方便debug
-RUN apt-get update && apt-get install procps
+# RUN apt-get update && apt-get install -y procps
 
 # Clean up
 RUN apt-get clean && \
