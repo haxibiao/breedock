@@ -282,6 +282,7 @@ services:
       - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
       - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       - docker-in-docker:/certs/client
+      - ${PHP_FPM_CONF}:/usr/local/etc/php-fpm.conf
     ports:
       - "${PHP_FPM_XDEBUG_PORT}:9003"
     expose:
@@ -713,6 +714,7 @@ services:
     volumes:
       - workspace
       - ${DATA_PATH_HOST}/aerospike:/opt/aerospike/data
+      - ${OPS_SERVER_ETC_PATH}:/etc
     ports:
       - "${AEROSPIKE_SERVICE_PORT}:3000"
       - "${AEROSPIKE_FABRIC_PORT}:3001"
