@@ -285,6 +285,7 @@ services:
       - docker-in-docker:/certs/client
       - ${PHP_FPM_CONF}:/usr/local/etc/php-fpm.conf
       - ./php-fpm/xlaravel.pool.conf:/usr/local/etc/xlaravel.pool.conf
+      - ./php-fpm/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
     ports:
       - "${PHP_FPM_XDEBUG_PORT}:9003"
     expose:
