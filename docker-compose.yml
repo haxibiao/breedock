@@ -284,7 +284,7 @@ services:
       - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
       - docker-in-docker:/certs/client
       - ${PHP_FPM_CONF}:/usr/local/etc/php-fpm.conf
-      - ./php-fpm/xlaravel.pool.conf:/usr/local/etc/xlaravel.pool.conf
+      - ./php-fpm/xlaravel.pool.conf:/usr/local/etc/php-fpm.d/xlaravel.pool.conf
       - ./php-fpm/opcache.ini:/usr/local/etc/php/conf.d/opcache.ini
     ports:
       - "${PHP_FPM_XDEBUG_PORT}:9003"
