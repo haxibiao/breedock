@@ -96,10 +96,10 @@ RUN set -xe; \
 # Set Timezone
 ###########################################################################
 
-ARG TZ=UTC
-ENV TZ ${TZ}
+ARG TZ=Asia/Shanghai
+ENV TZ Asia/Shanghai
 
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone
 
 ###########################################################################
 # User Aliases
@@ -1664,6 +1664,7 @@ USER root
 RUN apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   rm /var/log/lastlog /var/log/faillog
+
 
 # Set default work directory
 WORKDIR /var/www
