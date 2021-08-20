@@ -143,6 +143,8 @@ RUN chown -R laradock:laradock /home/laradock/.composer
 # Export composer vendor path
 RUN echo "" >> ~/.bashrc && \
   echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+# 修改时区
+RUN echo "TZ='Asia/Shanghai'; export TZ" >> ~/.profile
 
 # Update composer
 ARG COMPOSER_VERSION=2
