@@ -59,6 +59,7 @@ volumes:
 services:
   ### Workspace Utilities ##################################
   workspace:
+    hostname: $HOSTNAME
     build:
       context: ./workspace
       args:
@@ -201,6 +202,7 @@ services:
 
   ### PHP-FPM ##############################################
   php-fpm:
+    hostname: $HOSTNAME
     build:
       context: ./php-fpm
       args:
@@ -308,6 +310,7 @@ services:
 
   ### PHP Worker ############################################
   php-worker:
+    hostname: $HOSTNAME
     build:
       context: ./php-worker
       args:
