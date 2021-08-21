@@ -780,13 +780,13 @@ RUN if [ ${NPM_REGISTRY} ]; then \
   . ~/.bashrc && npm config set registry ${NPM_REGISTRY} \
   ;fi
 
-# Mount .npmrc .netrc into home folder
+# Mount .npmrc into home folder
 COPY ./.npmrc /root/.npmrc
 COPY ./.npmrc /home/laradock/.npmrc
 
+# Mount .netrc into home folder
 COPY ./.netrc /root/.netrc
 COPY ./.netrc /home/laradock/.netrc
-
 
 ###########################################################################
 # PNPM:
