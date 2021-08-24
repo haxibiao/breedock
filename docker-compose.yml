@@ -504,7 +504,7 @@ services:
     security_opt:
       - seccomp:unconfined
     ports:
-      - "${MYSQL_PORT}:3306"
+      - "${MYSQL_PORT}:${MYSQL_PORT}"
     networks:
       - backend
 
