@@ -1111,16 +1111,6 @@ services:
       - frontend
       - backend
 
-  ### Sniffbot ###############################################
-  sniffbot:
-    build: ./sniffbot
-    ports:
-      - "${SNIFFBOT_PORT}:5555"
-    volumes:
-      - /dev/shm:/dev/shm
-    networks:
-      - frontend
-
   ### Selenium ###############################################
   selenium:
     build: ./selenium
