@@ -200,6 +200,17 @@ services:
     links:
       - docker-in-docker
 
+  proxyserver:
+    image: qautomatron/docker-browsermob-proxy
+    ports:
+      - "9090:9090"
+      - "32000-33000:32000-33000"
+    environment:
+      - BMP_PORT=9090
+      - PORT_RANGE=32000-33000
+    networks:
+      - frontend
+
   ### PHP-FPM ##############################################
   php-fpm:
     hostname: $HOSTNAME
@@ -1099,6 +1110,16 @@ services:
     networks:
       - frontend
       - backend
+
+  ### Sniffbot ###############################################
+  sniffbot:
+    build: ./sniffbot
+    ports:
+      - "${SNIFFBOT_PORT}:5555"
+    volumes:
+      - /dev/shm:/dev/shm
+    networks:
+      - frontend
 
   ### Selenium ###############################################
   selenium:
