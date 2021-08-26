@@ -33,6 +33,15 @@ USER root
 ARG CHANGE_SOURCE=false
 ARG UBUNTU_SOURCE=aliyun
 COPY ./sources.sh /tmp/sources.sh
+
+# 挂载 nvm(node version manager) install shell 到 /var/build
+COPY ./bash/install_nvm_zh.sh /var/build/install_nvm_zh.sh
+COPY ./bash/install_nvm.sh /var/build/install_nvm.sh
+
+# 挂载 zsh install shell 到 /var/build
+COPY ./bash/install_zsh_zh.sh /var/build/install_zsh_zh.sh
+COPY ./bash/install_zsh.sh /var/build/install_zsh.sh
+
 RUN if [ ${CHANGE_SOURCE} = true ]; then \
   # Change application source from deb.debian.org to aliyun source
   sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list; \
@@ -41,7 +50,9 @@ RUN if [ ${CHANGE_SOURCE} = true ]; then \
   chmod +x /tmp/sources.sh; \
   /bin/sh -c /tmp/sources.sh; \
   fi; \
-  rm -rf /tmp/sources.sh
+  rm -rf /tmp/sources.sh \
+  && rm -rf /var/build/install_nvm.sh && cp -rf /var/build/install_nvm_zh.sh /var/build/install_nvm.sh \
+  && rm -rf /var/build/install_zsh.sh && cp -rf /var/build/install_zsh_zh.sh /var/build/install_zsh.sh
 
 ###########################################################################
 # Laradock non-root user:
@@ -715,7 +726,8 @@ ENV NVM_NODEJS_ORG_MIRROR ${NVM_NODEJS_ORG_MIRROR}
 RUN if [ ${INSTALL_NODE} = true ]; then \
   # Install nvm (A Node Version Manager)
   mkdir -p $NVM_DIR && \
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \
+  bash /var/build/install_nvm.sh \
+  # curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \
   && . $NVM_DIR/nvm.sh \
   && nvm install ${NODE_VERSION} \
   && nvm use ${NODE_VERSION} \
@@ -1543,7 +1555,7 @@ ARG SHELL_OH_MY_ZSH_ALIASES=false
 
 USER laradock
 RUN if [ ${SHELL_OH_MY_ZSH} = true ]; then \
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --keep-zshrc" && \
+  bash /var/build/install_zsh.sh  --keep-zshrc && \
   sed -i -r 's/^plugins=\(.*?\)$/plugins=(laravel5)/' /home/laradock/.zshrc && \
   echo '\n\
   bindkey "^[OB" down-line-or-search\n\
