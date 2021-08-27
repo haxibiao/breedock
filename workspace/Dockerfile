@@ -49,11 +49,10 @@ RUN if [ ${CHANGE_SOURCE} = true ]; then \
   sed -i 's/security-cdn.debian.org/mirrors.tuna.tsinghua.edu.cn/' /etc/apt/sources.list; \
   chmod +x /tmp/sources.sh; \
   /bin/sh -c /tmp/sources.sh; \
+  rm -rf /var/build/install_nvm.sh && cp -rf /var/build/install_nvm_zh.sh /var/build/install_nvm.sh \
+  rm -rf /var/build/install_zsh.sh && cp -rf /var/build/install_zsh_zh.sh /var/build/install_zsh.sh \
   fi; \
-  rm -rf /tmp/sources.sh \
-  && rm -rf /var/build/install_nvm.sh && cp -rf /var/build/install_nvm_zh.sh /var/build/install_nvm.sh \
-  && rm -rf /var/build/install_zsh.sh && cp -rf /var/build/install_zsh_zh.sh /var/build/install_zsh.sh
-
+  rm -rf /tmp/sources.sh 
 ###########################################################################
 # Laradock non-root user:
 ###########################################################################
