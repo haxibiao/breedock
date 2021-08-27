@@ -1077,7 +1077,7 @@ services:
       - ./certbot/letsencrypt/:/var/www/letsencrypt
     environment:
       - CN=${APP_DOMAIN}
-      - EMAIL=${APP_DOMAIN_EMAIL}
+      - EMAIL=${APP_EMAIL}
     networks:
       - frontend
 
