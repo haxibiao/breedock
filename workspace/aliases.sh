@@ -97,7 +97,7 @@ alias npms="npms search"
 alias pm="package-menu"
 # requires installation of 'https://www.npmjs.com/package/pkg-version-cli'
 alias pv="package-version"
-# requires installation of 'https://github.com.cnpmjs.org/sindresorhus/latest-version-cli'
+# requires installation of 'https://github.com/sindresorhus/latest-version-cli'
 alias lv="latest-version"
 
 # git aliases

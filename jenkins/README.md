@@ -7,9 +7,7 @@ This is a fully functional Jenkins server, based on the Long Term Support releas
 
 For weekly releases check out [`jenkinsci/jenkins`](https://hub.docker.com/r/jenkinsci/jenkins/)
 
-
 <img src="http://jenkins-ci.org/sites/default/files/jenkins_logo.png"/>
-
 
 # Usage
 
@@ -26,7 +24,7 @@ You will probably want to make that an explicit volume so you can manage it and 
 docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins
 ```
 
-this will automatically create a 'jenkins_home' volume on docker host, that will survive container stop/restart/deletion. 
+this will automatically create a 'jenkins_home' volume on docker host, that will survive container stop/restart/deletion.
 
 Avoid using a bind mount from a folder on host into `/var/jenkins_home`, as this might result in file permission issue. If you _really_ need to bind mount jenkins_home, ensure that directory on host is accessible by the jenkins user in container (jenkins user - uid 1000) or use `-u some_other_user` parameter with `docker run`.
 
@@ -37,7 +35,7 @@ If you bind mount in a volume - you can simply back up that directory
 
 This is highly recommended. Treat the jenkins_home directory as you would a database - in Docker you would generally put a database on a volume.
 
-If your volume is inside a container - you can use ```docker cp $ID:/var/jenkins_home``` command to extract the data, or other options to find where the volume data is.
+If your volume is inside a container - you can use `docker cp $ID:/var/jenkins_home` command to extract the data, or other options to find where the volume data is.
 Note that some symlinks on some OSes may be converted to copies (this can confuse jenkins with lastStableBuild links etc)
 
 For more info check Docker docs section on [Managing data in containers](https://docs.docker.com/engine/tutorials/dockervolumes/)
@@ -47,6 +45,7 @@ For more info check Docker docs section on [Managing data in containers](https:/
 You can specify and set the number of executors of your Jenkins master instance using a groovy script. By default its set to 2 executors, but you can extend the image and change it to your desired number of executors :
 
 `executors.groovy`
+
 ```
 import jenkins.model.*
 Jenkins.instance.setNumExecutors(5)
@@ -59,12 +58,11 @@ FROM jenkins
 COPY executors.groovy /usr/share/jenkins/ref/init.groovy.d/executors.groovy
 ```
 
-
 # Attaching build executors
 
 You can run builds on the master out of the box.
 
-But if you want to attach build slave servers **through JNLP (Java Web Start)**: make sure you map the port: ```-p 50000:50000``` - which will be used when you connect a slave agent.
+But if you want to attach build slave servers **through JNLP (Java Web Start)**: make sure you map the port: `-p 50000:50000` - which will be used when you connect a slave agent.
 
 If you are only using [SSH slaves](https://wiki.jenkins-ci.org/display/JENKINS/SSH+Slaves+plugin), then you do **NOT** need to put that port mapping.
 
@@ -93,16 +91,20 @@ docker run --name myjenkins -p 8080:8080 -p 50000:50000 --env JAVA_OPTS="-Djava.
 ```
 
 # Configuring reverse proxy
+
 If you want to install Jenkins behind a reverse proxy with prefix, example: mysite.com/jenkins, you need to add environment variable `JENKINS_OPTS="--prefix=/jenkins"` and then follow the below procedures to configure your reverse proxy, which will depend if you have Apache ou Nginx:
+
 - [Apache](https://wiki.jenkins-ci.org/display/JENKINS/Running+Jenkins+behind+Apache)
 - [Nginx](https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+behind+an+NGinX+reverse+proxy)
 
 # Passing Jenkins launcher parameters
 
 Argument you pass to docker running the jenkins image are passed to jenkins launcher, so you can run for sample :
+
 ```
 docker run jenkins --version
 ```
+
 This will dump Jenkins version, just like when you run jenkins as an executable war.
 
 You also can define jenkins arguments as `JENKINS_OPTS`. This is usefull to define a set of arguments to pass to jenkins launcher as you
@@ -124,7 +126,9 @@ You can also change the default slave agent port for jenkins by defining `JENKIN
 FROM jenkins:1.565.3
 ENV JENKINS_SLAVE_AGENT_PORT 50001
 ```
+
 or as a parameter to docker,
+
 ```
 docker run --name myjenkins -p 8080:8080 -p 50001:50001 --env JENKINS_SLAVE_AGENT_PORT=50001 jenkins
 ```
@@ -166,11 +170,10 @@ When jenkins container starts, it will check `JENKINS_HOME` has this reference c
 there if required. It will not override such files, so if you upgraded some plugins from UI they won't
 be reverted on next start.
 
-In case you *do* want to override, append '.override' to the name of the reference file. E.g. a file named
+In case you _do_ want to override, append '.override' to the name of the reference file. E.g. a file named
 `/usr/share/jenkins/ref/config.xml.override` will overwrite an existing `config.xml` file in JENKINS_HOME.
 
 Also see [JENKINS-24986](https://issues.jenkins-ci.org/browse/JENKINS-24986)
-
 
 Here is an example to get the list of plugins from an existing server:
 
@@ -215,7 +218,7 @@ Build with the usual
 
     docker build -t jenkins .
 
-Tests are written using [bats](https://github.com.cnpmjs.org/sstephenson/bats) under the `tests` dir
+Tests are written using [bats](https://github.com/sstephenson/bats) under the `tests` dir
 
     bats tests
 

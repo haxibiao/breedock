@@ -29,7 +29,7 @@ ENV TINI_VERSION 0.16.1
 ENV TINI_SHA d1cb5d71adc01d47e302ea439d70c79bd0864288
 
 # Use tini as subreaper in Docker container to adopt zombie processes 
-RUN curl -fsSL https://github.com.cnpmjs.org/krallin/tini/releases/download/v${TINI_VERSION}/tini-static-amd64 -o /bin/tini && chmod +x /bin/tini \
+RUN curl -fsSL https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini-static-amd64 -o /bin/tini && chmod +x /bin/tini \
   && echo "$TINI_SHA  /bin/tini" | sha1sum -c -
 
 COPY init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-agent-port.groovy
@@ -47,7 +47,7 @@ ARG JENKINS_SHA=014f669f32bc6e925e926e260503670b32662f006799b133a031a70a794c8a14
 ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
 
 # could use ADD but this one does not check Last-Modified header neither does it allow to control checksum 
-# see https://github.com.cnpmjs.org/docker/docker/issues/8331
+# see https://github.com/docker/docker/issues/8331
 RUN curl -fsSL ${JENKINS_URL} -o /usr/share/jenkins/jenkins.war \
   && echo "${JENKINS_SHA}  /usr/share/jenkins/jenkins.war" | sha256sum -c -
 
@@ -66,14 +66,14 @@ RUN groupadd -g ${DOCKER_GID} docker \
   && apt-get -q clean -y \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*.bin
 
-# Install Docker-in-Docker from git@github.com.cnpmjs.org:jpetazzo/dind.git
+# Install Docker-in-Docker from git@github.com:jpetazzo/dind.git
 # RUN apt-get update -qq && apt-get install -qqy apt-transport-https ca-certificates curl lxc iptables
 # Install Docker from Docker Inc. repositories.
 RUN apt-get install -y curl && curl -sSL https://get.docker.com/ | sh
 RUN usermod -aG docker jenkins
 
 # Install Docker-Compose
-RUN curl -L "https://github.com.cnpmjs.org/docker/compose/releases/download/1.16.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+RUN curl -L "https://github.com/docker/compose/releases/download/1.16.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 
 
@@ -106,7 +106,7 @@ COPY install-plugins.sh /usr/local/bin/install-plugins.sh
 #USER root
 #RUN chmod 600 /var/jenkins_home/.ssh/id_rsa
 #RUN chmod 644 /var/jenkins_home/.ssh/id_rsa.pub
-## ssh-keyscan -H github.com.cnpmjs.org >> ~/.ssh/known_hosts
+## ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 ## ssh-keyscan -H bitbucket.org >> ~/.ssh/known_hosts
 
 # Fix docker permission denied error

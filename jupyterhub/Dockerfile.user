@@ -58,7 +58,7 @@ RUN chmod +x /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start-notebook.sh
 RUN chmod +x /usr/local/bin/start-singleuser.sh
 
-RUN wget --quiet https://github.com.cnpmjs.org/krallin/tini/releases/download/v0.10.0/tini && \
+RUN wget --quiet https://github.com/krallin/tini/releases/download/v0.10.0/tini && \
     mv tini /usr/local/bin/tini && \
     chmod +x /usr/local/bin/tini
 

@@ -4,7 +4,7 @@
 #--------------------------------------------------------------------------
 #
 # To edit the 'php-fpm' base Image, visit its repository on Github
-#    https://github.com.cnpmjs.org/Laradock/php-fpm
+#    https://github.com/Laradock/php-fpm
 #
 # To change its version, see the available Tags on the Docker Hub:
 #    https://hub.docker.com/r/laradock/php-fpm/tags/
@@ -49,9 +49,9 @@ RUN set -xe; \
       # Mandatory Software's such as ("mcrypt", "pdo_mysql", "libssl-dev", ....)
       # are installed on the base image 'laradock/php-fpm' image. If you want
       # to add more Software's or remove existing one, you need to edit the
-      # base image (https://github.com.cnpmjs.org/Laradock/php-fpm).
+      # base image (https://github.com/Laradock/php-fpm).
       #
-      # next lines are here becase there is no auto build on dockerhub see https://github.com.cnpmjs.org/laradock/laradock/pull/1903#issuecomment-463142846
+      # next lines are here becase there is no auto build on dockerhub see https://github.com/laradock/laradock/pull/1903#issuecomment-463142846
       libzip-dev zip unzip && \
       if [ ${LARADOCK_PHP_VERSION} = "7.3" ] || [ ${LARADOCK_PHP_VERSION} = "7.4" ] || [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
         docker-php-ext-configure zip; \
@@ -377,7 +377,7 @@ RUN set -eux; \
       if   [ $(php -r "echo PHP_MAJOR_VERSION;") != 5 ]; then \
         pecl install xhprof; \
       else \
-        curl -L -o /tmp/xhprof.tar.gz "https://codeload.github.com.cnpmjs.org/phacility/xhprof/tar.gz/master"; \
+        curl -L -o /tmp/xhprof.tar.gz "https://codeload.github.com/phacility/xhprof/tar.gz/master"; \
         mkdir -p /tmp/xhprof; \
         tar -C /tmp/xhprof -zxvf /tmp/xhprof.tar.gz --strip 1; \
         ( \
@@ -395,7 +395,7 @@ RUN set -eux; \
     fi
 
 # if [ ${INSTALL_XHPROF_USE_TIDYWAYS} = true ]; then \
-#   https://github.com.cnpmjs.org/tideways/php-xhprof-extension
+#   https://github.com/tideways/php-xhprof-extension
 # fi
 
 # COPY ./xhprof.ini /usr/local/etc/php/conf.d
@@ -444,7 +444,7 @@ RUN if [ ${INSTALL_CASSANDRA} = true ]; then \
       dpkg -i cassandra-cpp-driver-dev.deb && \
       rm libuv1.deb libuv1-dev.deb cassandra-cpp-driver-dev.deb cassandra-cpp-driver.deb && \
       cd /usr/src && \
-      git clone https://github.com.cnpmjs.org/datastax/php-driver.git && \
+      git clone https://github.com/datastax/php-driver.git && \
       cd /usr/src/php-driver/ext && \
       phpize && \
       mkdir /usr/src/php-driver/build && \
@@ -467,7 +467,7 @@ ARG INSTALL_GEARMAN=false
 RUN if [ ${INSTALL_GEARMAN} = true ]; then \
     apt-get -y install libgearman-dev && \
     cd /tmp && \
-    curl -L https://github.com.cnpmjs.org/wcgallego/pecl-gearman/archive/gearman-2.0.5.zip -O && \
+    curl -L https://github.com/wcgallego/pecl-gearman/archive/gearman-2.0.5.zip -O && \
     unzip gearman-2.0.5.zip && \
     mv pecl-gearman-gearman-2.0.5 pecl-gearman && \
     cd /tmp/pecl-gearman && \
@@ -543,9 +543,9 @@ RUN set -xe; \
     apt-get -y install sudo wget && \
     # Install the php aerospike extension
     if [ $(php -r "echo PHP_MAJOR_VERSION;") = "5" ]; then \
-      curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com.cnpmjs.org/aerospike/aerospike-client-php5/archive/master.tar.gz; \
+      curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com/aerospike/aerospike-client-php5/archive/master.tar.gz; \
     else \
-      curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com.cnpmjs.org/aerospike/aerospike-client-php/archive/master.tar.gz; \
+      curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com/aerospike/aerospike-client-php/archive/master.tar.gz; \
     fi \
     && mkdir -p /tmp/aerospike-client-php \
     && tar -C /tmp/aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1 \
@@ -574,7 +574,7 @@ RUN set -xe; \
 ###########################################################################
 
 ARG INSTALL_OCI8=false
-ARG ORACLE_INSTANT_CLIENT_MIRROR=https://github.com.cnpmjs.org/diogomascarenha/oracle-instantclient/raw/master/
+ARG ORACLE_INSTANT_CLIENT_MIRROR=https://github.com/diogomascarenha/oracle-instantclient/raw/master/
 
 ENV LD_LIBRARY_PATH="/opt/oracle/instantclient_12_1"
 ENV OCI_HOME="/opt/oracle/instantclient_12_1"
@@ -710,7 +710,7 @@ RUN set -eux; \
       && php -m | grep -q 'pdo_dblib' \
     ;else \
       ###########################################################################
-      # Ref from https://github.com.cnpmjs.org/Microsoft/msphpsql/wiki/Dockerfile-for-adding-pdo_sqlsrv-and-sqlsrv-to-official-php-image
+      # Ref from https://github.com/Microsoft/msphpsql/wiki/Dockerfile-for-adding-pdo_sqlsrv-and-sqlsrv-to-official-php-image
       ###########################################################################
       # Add Microsoft repo for Microsoft ODBC Driver 13 for Linux
       apt-get install -yqq apt-transport-https gnupg \
@@ -763,9 +763,9 @@ RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
     if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
       cd /tmp && \
       if [ ${IMAGEMAGICK_VERSION} = "latest" ]; then \
-        git clone https://github.com.cnpmjs.org/Imagick/imagick; \
+        git clone https://github.com/Imagick/imagick; \
       else \
-        git clone --branch ${IMAGEMAGICK_VERSION} https://github.com.cnpmjs.org/Imagick/imagick; \
+        git clone --branch ${IMAGEMAGICK_VERSION} https://github.com/Imagick/imagick; \
       fi && \
       cd imagick && \
       phpize && \
@@ -828,14 +828,14 @@ COPY ./phalcon.ini /usr/local/etc/php/conf.d/phalcon.ini.disable
 
 RUN if [ $INSTALL_PHALCON = true ]; then \
     apt-get install -yqq unzip libpcre3-dev gcc make re2c git automake autoconf\
-    && git clone https://github.com.cnpmjs.org/jbboehr/php-psr.git \
+    && git clone https://github.com/jbboehr/php-psr.git \
     && cd php-psr \
     && phpize \
     && ./configure \
     && make \
     && make test \
     && make install \
-    && curl -L -o /tmp/cphalcon.zip https://github.com.cnpmjs.org/phalcon/cphalcon/archive/v${LARADOCK_PHALCON_VERSION}.zip \
+    && curl -L -o /tmp/cphalcon.zip https://github.com/phalcon/cphalcon/archive/v${LARADOCK_PHALCON_VERSION}.zip \
     && unzip -d /tmp/ /tmp/cphalcon.zip \
     && cd /tmp/cphalcon-${LARADOCK_PHALCON_VERSION}/build \
     && ./install \
@@ -990,9 +990,9 @@ ARG INSTALL_AUDIOWAVEFORM=false
 
 RUN if [ ${INSTALL_AUDIOWAVEFORM} = true ]; then \
    apt-get -y install wget make cmake gcc g++ libmad0-dev libid3tag0-dev libsndfile1-dev libgd-dev libboost-filesystem-dev libboost-program-options-dev libboost-regex-dev \
-   && git clone https://github.com.cnpmjs.org/bbc/audiowaveform.git \
+   && git clone https://github.com/bbc/audiowaveform.git \
    && cd audiowaveform \
-   && wget https://github.com.cnpmjs.org/google/googletest/archive/release-1.10.0.tar.gz \
+   && wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz \
    && tar xzf release-1.10.0.tar.gz \
    && ln -s googletest-release-1.10.0/googletest googletest \
    && ln -s googletest-release-1.10.0/googlemock googlemock \
@@ -1024,7 +1024,7 @@ RUN if [ ${INSTALL_WKHTMLTOPDF} = true ]; then \
       xfonts-base \
       xfonts-75dpi \
       wget \
-    && wget https://github.com.cnpmjs.org/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.stretch_amd64.deb \
+    && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.stretch_amd64.deb \
     && dpkg -i wkhtmltox_0.12.6-1.stretch_amd64.deb \
     && apt -f install \
 ;fi
@@ -1102,7 +1102,7 @@ RUN set -eux; \
     if [ ${INSTALL_ZOOKEEPER} = true ]; then \
     apt install -yqq libzookeeper-mt-dev; \
     if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
-      curl -L -o /tmp/php-zookeeper.tar.gz https://github.com.cnpmjs.org/php-zookeeper/php-zookeeper/archive/master.tar.gz; \
+      curl -L -o /tmp/php-zookeeper.tar.gz https://github.com/php-zookeeper/php-zookeeper/archive/master.tar.gz; \
       mkdir -p /tmp/php-zookeeper; \
       tar -C /tmp/php-zookeeper -zxvf /tmp/php-zookeeper.tar.gz --strip 1; \
       cd /tmp/php-zookeeper; \

@@ -30,7 +30,7 @@ laradock1.demo:80 {
     root /var/www/public
     # Create a Webhook in git.
     #git {
-	#repo https://github.com.cnpmjs.org/xxx/xxx
+	#repo https://github.com/xxx/xxx
     #    path /home/xxx
     #    #interval 60
     #    hook  webhook laradock

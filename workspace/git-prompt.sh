@@ -1,4 +1,4 @@
-# Settings info at https://github.com.cnpmjs.org/magicmonty/bash-git-prompt
+# Settings info at https://github.com/magicmonty/bash-git-prompt
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     # Set config variables first
     GIT_PROMPT_ONLY_IN_REPO=1

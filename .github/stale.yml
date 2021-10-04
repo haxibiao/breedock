@@ -1,4 +1,4 @@
-# Configuration for Github probot-stale - https://github.com.cnpmjs.org/probot/stale
+# Configuration for Github probot-stale - https://github.com/probot/stale
 
 # Number of days of inactivity before an issue becomes stale
 daysUntilStale: 90
@@ -6,7 +6,7 @@ daysUntilStale: 90
 daysUntilClose: 21
 # Issues with these labels will never be considered stale
 exemptLabels:
-  - 'Type: Feature Request'
+  - "Type: Feature Request"
 # Label to use when marking an issue as stale
 staleLabel: Stale
 # Comment to post when marking an issue as stale. Set to `false` to disable

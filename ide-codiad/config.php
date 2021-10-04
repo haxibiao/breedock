@@ -38,6 +38,6 @@ define("WSURL", getenv('APP_CODE_PATH_CONTAINER',BASE_PATH . "workspace"));
 define("MARKETURL", "http://market.codiad.com/json");
 // Update Check
 //define("UPDATEURL", "http://update.codiad.com/?v={VER}&o={OS}&p={PHP}&w={WEB}&a={ACT}");
-define("ARCHIVEURL", "https://github.com.cnpmjs.org/Codiad/Codiad/archive/master.zip");
-define("COMMITURL", "https://api.github.com.cnpmjs.org/repos/Codiad/Codiad/commits");
+define("ARCHIVEURL", "https://github.com/Codiad/Codiad/archive/master.zip");
+define("COMMITURL", "https://api.github.com/repos/Codiad/Codiad/commits");
 ?>
