@@ -218,7 +218,7 @@ Build with the usual
 
     docker build -t jenkins .
 
-Tests are written using [bats](https://github.com/sstephenson/bats) under the `tests` dir
+Tests are written using [bats](https://github.com.cnpmjs.org/sstephenson/bats) under the `tests` dir
 
     bats tests
 

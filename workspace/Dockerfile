@@ -4,7 +4,7 @@
 #--------------------------------------------------------------------------
 #
 # To edit the 'workspace' base Image, visit its repository on Github
-#    https://github.com/Laradock/workspace
+#    https://github.com.cnpmjs.org/Laradock/workspace
 #
 # To change its version, see the available Tags on the Docker Hub:
 #    https://hub.docker.com/r/laradock/workspace/tags/
@@ -80,9 +80,9 @@ RUN set -xe; \
   # Mandatory Software's such as ("php-cli", "git", "vim", ....) are
   # installed on the base image 'laradock/workspace' image. If you want
   # to add more Software's or remove existing one, you need to edit the
-  # base image (https://github.com/Laradock/workspace).
+  # base image (https://github.com.cnpmjs.org/Laradock/workspace).
   #
-  # next lines are here because there is no auto build on dockerhub see https://github.com/laradock/laradock/pull/1903#issuecomment-463142846
+  # next lines are here because there is no auto build on dockerhub see https://github.com.cnpmjs.org/laradock/laradock/pull/1903#issuecomment-463142846
   libzip-dev zip unzip \
   # Install the zip extension
   php${LARADOCK_PHP_VERSION}-zip \
@@ -231,7 +231,7 @@ ENV DRUSH_VERSION ${DRUSH_VERSION}
 RUN if [ ${INSTALL_DRUSH} = true ]; then \
   apt-get -qq -y install mysql-client && \
   # Install Drush with the phar file.
-  curl -fsSL -o /usr/local/bin/drush https://github.com/drush-ops/drush/releases/download/${DRUSH_VERSION}/drush.phar | bash && \
+  curl -fsSL -o /usr/local/bin/drush https://github.com.cnpmjs.org/drush-ops/drush/releases/download/${DRUSH_VERSION}/drush.phar | bash && \
   chmod +x /usr/local/bin/drush && \
   drush core-status \
   ;fi
@@ -517,7 +517,7 @@ RUN if [ ${INSTALL_CASSANDRA} = true ]; then \
   dpkg -i cassandra-cpp-driver-dev.deb && \
   rm libuv1.deb libuv1-dev.deb cassandra-cpp-driver-dev.deb cassandra-cpp-driver.deb && \
   cd /usr/src && \
-  git clone https://github.com/datastax/php-driver.git && \
+  git clone https://github.com.cnpmjs.org/datastax/php-driver.git && \
   cd /usr/src/php-driver/ext && \
   phpize && \
   mkdir /usr/src/php-driver/build && \
@@ -859,9 +859,9 @@ RUN set -xe; \
   apt-get -y install sudo wget && \
   # Install the php aerospike extension
   if [ $(php -r "echo PHP_MAJOR_VERSION;") = "5" ]; then \
-  curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com/aerospike/aerospike-client-php5/archive/master.tar.gz; \
+  curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com.cnpmjs.org/aerospike/aerospike-client-php5/archive/master.tar.gz; \
   else \
-  curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com/aerospike/aerospike-client-php/archive/master.tar.gz; \
+  curl -L -o /tmp/aerospike-client-php.tar.gz https://github.com.cnpmjs.org/aerospike/aerospike-client-php/archive/master.tar.gz; \
   fi \
   && mkdir -p /tmp/aerospike-client-php \
   && tar -C /tmp/aerospike-client-php -zxvf /tmp/aerospike-client-php.tar.gz --strip 1 \
@@ -897,7 +897,7 @@ RUN set -xe; \
 
 USER root
 ARG INSTALL_OCI8=false
-ARG ORACLE_INSTANT_CLIENT_MIRROR=https://github.com/diogomascarenha/oracle-instantclient/raw/master/
+ARG ORACLE_INSTANT_CLIENT_MIRROR=https://github.com.cnpmjs.org/diogomascarenha/oracle-instantclient/raw/master/
 
 ENV LD_LIBRARY_PATH="/opt/oracle/instantclient_12_1"
 ENV OCI_HOME="/opt/oracle/instantclient_12_1"
@@ -1001,7 +1001,7 @@ ARG INSTALL_DEPLOYER=false
 RUN if [ ${INSTALL_DEPLOYER} = true ]; then \
   # Install the Deployer
   # Using Phar as currently there is no support for laravel 4 from composer version
-  # Waiting to be resolved on https://github.com/deployphp/deployer/issues/1552
+  # Waiting to be resolved on https://github.com.cnpmjs.org/deployphp/deployer/issues/1552
   curl -LO https://deployer.org/deployer.phar && \
   mv deployer.phar /usr/local/bin/dep && \
   chmod +x /usr/local/bin/dep \
@@ -1036,7 +1036,7 @@ RUN if [ ${INSTALL_LINUXBREW} = true ]; then \
   libbz2-dev libcurl4-openssl-dev \
   libexpat-dev libncurses-dev && \
   # Install the Linuxbrew
-  git clone --depth=1 https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew && \
+  git clone --depth=1 https://github.com.cnpmjs.org/Homebrew/linuxbrew.git ~/.linuxbrew && \
   echo "" >> ~/.bashrc && \
   echo 'export PKG_CONFIG_PATH"=/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib64/pkgconfig:/usr/share/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.bashrc && \
   # Setup linuxbrew
@@ -1062,7 +1062,7 @@ RUN set -eux; \
   ;else \
   ###########################################################################
   #  The following steps were taken from
-  #  https://github.com/Microsoft/msphpsql/wiki/Install-and-configuration
+  #  https://github.com.cnpmjs.org/Microsoft/msphpsql/wiki/Install-and-configuration
   ###########################################################################
   curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
   curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
@@ -1213,9 +1213,9 @@ RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
   apt-get install -y git && \
   cd /tmp && \
   if [ ${IMAGEMAGICK_VERSION} = "latest" ]; then \
-  git clone https://github.com/Imagick/imagick; \
+  git clone https://github.com.cnpmjs.org/Imagick/imagick; \
   else \
-  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com/Imagick/imagick; \
+  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com.cnpmjs.org/Imagick/imagick; \
   fi && \
   cd imagick && \
   phpize && \
@@ -1311,14 +1311,14 @@ ENV LARADOCK_PHALCON_VERSION ${LARADOCK_PHALCON_VERSION}
 
 RUN if [ $INSTALL_PHALCON = true ]; then \
   apt-get update && apt-get install -yqq unzip libpcre3-dev gcc make re2c git automake autoconf\
-  && git clone https://github.com/jbboehr/php-psr.git \
+  && git clone https://github.com.cnpmjs.org/jbboehr/php-psr.git \
   && cd php-psr \
   && phpize \
   && ./configure \
   && make \
   && make test \
   && make install \
-  && curl -L -o /tmp/cphalcon.zip https://github.com/phalcon/cphalcon/archive/v${LARADOCK_PHALCON_VERSION}.zip \
+  && curl -L -o /tmp/cphalcon.zip https://github.com.cnpmjs.org/phalcon/cphalcon/archive/v${LARADOCK_PHALCON_VERSION}.zip \
   && unzip -d /tmp/ /tmp/cphalcon.zip \
   && cd /tmp/cphalcon-${LARADOCK_PHALCON_VERSION}/build \
   && ./install \
@@ -1415,9 +1415,9 @@ ARG INSTALL_AUDIOWAVEFORM=false
 
 RUN if [ ${INSTALL_AUDIOWAVEFORM} = true ]; then \
   apt-get -y install git wget make cmake gcc g++ libmad0-dev libid3tag0-dev libsndfile1-dev libgd-dev libboost-filesystem-dev libboost-program-options-dev libboost-regex-dev \
-  && git clone https://github.com/bbc/audiowaveform.git \
+  && git clone https://github.com.cnpmjs.org/bbc/audiowaveform.git \
   && cd audiowaveform \
-  && wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz \
+  && wget https://github.com.cnpmjs.org/google/googletest/archive/release-1.10.0.tar.gz \
   && tar xzf release-1.10.0.tar.gz \
   && ln -s googletest-release-1.10.0/googletest googletest \
   && ln -s googletest-release-1.10.0/googlemock googlemock \
@@ -1448,7 +1448,7 @@ RUN if [ ${INSTALL_WKHTMLTOPDF} = true ]; then \
   xfonts-base \
   xfonts-75dpi \
   wget \
-  && wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb \
+  && wget https://github.com.cnpmjs.org/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb \
   && dpkg -i wkhtmltox_0.12.6-1.bionic_amd64.deb \
   && apt -f install \
   ;fi
@@ -1484,7 +1484,7 @@ ARG INSTALL_GIT_PROMPT=false
 COPY git-prompt.sh /tmp/git-prompt
 
 RUN if [ ${INSTALL_GIT_PROMPT} = true ]; then \
-  git clone https://github.com/magicmonty/bash-git-prompt.git /root/.bash-git-prompt --depth=1 && \
+  git clone https://github.com.cnpmjs.org/magicmonty/bash-git-prompt.git /root/.bash-git-prompt --depth=1 && \
   cat /tmp/git-prompt >> /root/.bashrc && \
   rm /tmp/git-prompt \
   ;fi
@@ -1518,13 +1518,13 @@ ARG PROTOC_VERSION
 
 RUN if [ ${INSTALL_PROTOC} = true ]; then \
   if [ ${PROTOC_VERSION} = "latest" ]; then \
-  REAL_PROTOC_VERSION=$(curl -s https://api.github.com/repos/protocolbuffers/protobuf/releases/latest | \
+  REAL_PROTOC_VERSION=$(curl -s https://api.github.com.cnpmjs.org/repos/protocolbuffers/protobuf/releases/latest | \
   sed -nr 's/.*"tag_name":\s?"v(.+?)".*/\1/p'); \
   else \
   REAL_PROTOC_VERSION=${PROTOC_VERSION}; \
   fi && \
   PROTOC_ZIP=protoc-${REAL_PROTOC_VERSION}-linux-x86_64.zip; \
-  curl -L -o /tmp/protoc.zip https://github.com/protocolbuffers/protobuf/releases/download/v${REAL_PROTOC_VERSION}/${PROTOC_ZIP} && \
+  curl -L -o /tmp/protoc.zip https://github.com.cnpmjs.org/protocolbuffers/protobuf/releases/download/v${REAL_PROTOC_VERSION}/${PROTOC_ZIP} && \
   unzip -q -o /tmp/protoc.zip -d /usr/local bin/protoc && \
   unzip -q -o /tmp/protoc.zip -d /usr/local 'include/*' && \
   rm -f /tmp/protoc.zip && \
@@ -1569,7 +1569,7 @@ RUN if [ ${SHELL_OH_MY_ZSH} = true ]; then \
   bindkey "^[[6~" down-line-or-history\n\
   bindkey "^?" backward-delete-char\n' >> /home/laradock/.zshrc && \
   if [ ${SHELL_OH_MY_ZSH_AUTOSUGESTIONS} = true ]; then \
-  sh -c "git clone https://github.com/zsh-users/zsh-autosuggestions /home/laradock/.oh-my-zsh/custom/plugins/zsh-autosuggestions" && \
+  sh -c "git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions /home/laradock/.oh-my-zsh/custom/plugins/zsh-autosuggestions" && \
   sed -i 's~plugins=(~plugins=(zsh-autosuggestions ~g' /home/laradock/.zshrc && \
   sed -i '1iZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20' /home/laradock/.zshrc && \
   sed -i '1iZSH_AUTOSUGGEST_STRATEGY=(history completion)' /home/laradock/.zshrc && \
@@ -1646,7 +1646,7 @@ RUN set -eux; \
   if [ ${INSTALL_ZOOKEEPER} = true ]; then \
   apt install -yqq libzookeeper-mt-dev; \
   if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
-  curl -L -o /tmp/php-zookeeper.tar.gz https://github.com/php-zookeeper/php-zookeeper/archive/master.tar.gz; \
+  curl -L -o /tmp/php-zookeeper.tar.gz https://github.com.cnpmjs.org/php-zookeeper/php-zookeeper/archive/master.tar.gz; \
   mkdir -p /tmp/php-zookeeper; \
   tar -C /tmp/php-zookeeper -zxvf /tmp/php-zookeeper.tar.gz --strip 1; \
   cd /tmp/php-zookeeper; \

@@ -14,7 +14,7 @@ RUN addgroup -g $PGID -S laradock && \
 
 USER laradock
 
-RUN cd /home/laradock && git clone https://github.com/mattpass/ICEcoder.git
+RUN cd /home/laradock && git clone https://github.com.cnpmjs.org/mattpass/ICEcoder.git
 
 WORKDIR /home/laradock/ICEcoder
 

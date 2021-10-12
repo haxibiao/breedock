@@ -8,7 +8,7 @@ Join the chat room on [Gitter](https://gitter.im/Laradock/laradock) and get help
 
 [![Gitter](https://badges.gitter.im/Laradock/laradock.svg)](https://gitter.im/Laradock/laradock?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-You can as well can open an [issue](https://github.com/laradock/laradock/issues) on Github (will be labeled as Question) and discuss it with people on [Gitter](https://gitter.im/Laradock/laradock).
+You can as well can open an [issue](https://github.com.cnpmjs.org/laradock/laradock/issues) on Github (will be labeled as Question) and discuss it with people on [Gitter](https://gitter.im/Laradock/laradock).
 
 <br>
 <a name="Common-Problems"></a>
@@ -62,7 +62,7 @@ This error sometimes happens because your Laravel application isn't running on t
 
 ## I get stuck when building nginx on (fetch mirrors.aliyun.com/alpine/v3.5/main/x86_64/APKINDEX.tar.gz)
 
-As stated on [#749](https://github.com/laradock/laradock/issues/749#issuecomment-419652646), Already fixed，just set `CHANGE_SOURCE` to false.
+As stated on [#749](https://github.com.cnpmjs.org/laradock/laradock/issues/749#issuecomment-419652646), Already fixed，just set `CHANGE_SOURCE` to false.
 
 ## Custom composer repo packagist url and npm registry url
 

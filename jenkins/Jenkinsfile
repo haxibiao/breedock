@@ -23,7 +23,7 @@ node('docker') {
         stage('Test') {
             sh """
             git submodule update --init --recursive
-            git clone https://github.com/sstephenson/bats.git
+            git clone https://github.com.cnpmjs.org/sstephenson/bats.git
             bats/bin/bats tests
             """
         }

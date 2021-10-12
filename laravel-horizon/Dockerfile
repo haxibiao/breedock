@@ -102,9 +102,9 @@ RUN set -eux; \
     if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
       cd /tmp && \
       if [ ${IMAGEMAGICK_VERSION} = "latest" ]; then \
-        git clone https://github.com/Imagick/imagick; \
+        git clone https://github.com.cnpmjs.org/Imagick/imagick; \
       else \
-        git clone --branch ${IMAGEMAGICK_VERSION} https://github.com/Imagick/imagick; \
+        git clone --branch ${IMAGEMAGICK_VERSION} https://github.com.cnpmjs.org/Imagick/imagick; \
       fi && \
       cd imagick && \
       phpize && \
@@ -183,7 +183,7 @@ ARG INSTALL_AUDIOWAVEFORM=false
 RUN if [ ${INSTALL_AUDIOWAVEFORM} = true ]; then \
    apk add git make cmake gcc g++ libmad-dev libid3tag-dev libsndfile-dev gd-dev boost-dev libgd libpng-dev zlib-dev \
    && apk add autoconf automake libtool gettext \
-   && wget https://github.com/xiph/flac/archive/1.3.3.tar.gz \
+   && wget https://github.com.cnpmjs.org/xiph/flac/archive/1.3.3.tar.gz \
    && tar xzf 1.3.3.tar.gz \
    && cd flac-1.3.3 \
    && ./autogen.sh \
@@ -191,9 +191,9 @@ RUN if [ ${INSTALL_AUDIOWAVEFORM} = true ]; then \
    && make \
    && make install \
    && cd .. \
-   && git clone https://github.com/bbc/audiowaveform.git \
+   && git clone https://github.com.cnpmjs.org/bbc/audiowaveform.git \
    && cd audiowaveform \
-   && wget https://github.com/google/googletest/archive/release-1.10.0.tar.gz \
+   && wget https://github.com.cnpmjs.org/google/googletest/archive/release-1.10.0.tar.gz \
    && tar xzf release-1.10.0.tar.gz \
    && ln -s googletest-release-1.10.0/googletest googletest \
    && ln -s googletest-release-1.10.0/googlemock googlemock \
@@ -214,7 +214,7 @@ RUN if [ ${INSTALL_CASSANDRA} = true ]; then \
     apk add --update --no-cache cassandra-cpp-driver libuv gmp \
     && apk add --update --no-cache cassandra-cpp-driver-dev gmp-dev --virtual .build-sec \
     && cd /usr/src \
-    && git clone https://github.com/datastax/php-driver.git \
+    && git clone https://github.com.cnpmjs.org/datastax/php-driver.git \
     && cd php-driver/ext \
     && phpize \
     && mkdir -p /usr/src/php-driver/build \

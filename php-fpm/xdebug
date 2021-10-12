@@ -65,7 +65,7 @@ xdebug_stop ()
     if [[ $OS_TYPE == "MINGW" ]]; then
         # This is the equivalent of:
         # winpty docker exec -it laradock_php-fpm_1 bash -c 'bla bla bla'
-        # Thanks to @michaelarnauts at https://github.com/docker/compose/issues/593
+        # Thanks to @michaelarnauts at https://github.com.cnpmjs.org/docker/compose/issues/593
         winpty docker exec -it $PHP_FPM_CONTAINER bash -c "${OFF_CMD}"
         docker restart $PHP_FPM_CONTAINER
         #docker-compose restart php-fpm
