@@ -4,22 +4,22 @@ type: index
 weight: 6
 ---
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com.cnpmjs.org/laradock/laradock)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/laradock/laradock)
 
 ## Have a Question
 
-If you have questions about how to use Laradock, please direct your questions to the discussion on [Gitter](https://gitter.im/Laradock/laradock). If you believe your question could help others, then consider opening an [Issue](https://github.com.cnpmjs.org/laradock/laradock/issues) (it will be labeled as `Question`) And you can still seek help on Gitter for it.
+If you have questions about how to use Laradock, please direct your questions to the discussion on [Gitter](https://gitter.im/Laradock/laradock). If you believe your question could help others, then consider opening an [Issue](https://github.com/laradock/laradock/issues) (it will be labeled as `Question`) And you can still seek help on Gitter for it.
 
 ## Found an Issue
 
 If you have an issue or you found a typo in the documentation, you can help us by
-opening an [Issue](https://github.com.cnpmjs.org/laradock/laradock/issues).
+opening an [Issue](https://github.com/laradock/laradock/issues).
 
 **Steps to do before opening an Issue:**
 
 1. Before you submit your issue search the archive, maybe your question was already answered couple hours ago (search in the closed Issues as well).
 
-2. Decide if the Issue belongs to this project or to [Docker](https://github.com.cnpmjs.org/docker) itself! or even the tool you are using such as Nginx or MongoDB...
+2. Decide if the Issue belongs to this project or to [Docker](https://github.com/docker) itself! or even the tool you are using such as Nginx or MongoDB...
 
 If your issue appears to be a bug, and hasn't been reported, then open a new issue.
 
@@ -28,7 +28,7 @@ features, by not reporting duplicate issues._
 
 ## Want a Feature
 
-You can request a new feature by submitting an [Issue](https://github.com.cnpmjs.org/laradock/laradock/issues) (it will be labeled as `Feature Suggestion`). If you would like to implement a new feature then consider submitting a Pull Request yourself.
+You can request a new feature by submitting an [Issue](https://github.com/laradock/laradock/issues) (it will be labeled as `Feature Suggestion`). If you would like to implement a new feature then consider submitting a Pull Request yourself.
 
 ## Update the Documentation (Site)
 
@@ -125,7 +125,7 @@ Always Test everything and make sure its working:
 
 Consider the following guidelines:
 
-- Search [GitHub](https://github.com.cnpmjs.org/laradock/laradock/pulls) for an open or closed Pull Request that relates to your submission. You don't want to duplicate efforts.
+- Search [GitHub](https://github.com/laradock/laradock/pulls) for an open or closed Pull Request that relates to your submission. You don't want to duplicate efforts.
 
 - Make your changes in a new git branch:
 

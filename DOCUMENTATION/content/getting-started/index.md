@@ -31,7 +31,7 @@ Choose the setup the best suits your needs.
 1 - Clone laradock on your project root directory:
 
 ```bash
-git submodule add https://github.com.cnpmjs.org/Laradock/laradock.git
+git submodule add https://github.com/Laradock/laradock.git
 ```
 
 Note: If you are not using Git yet for your project, you can use `git clone` instead of `git submodule `.
@@ -58,7 +58,7 @@ _(It's important to rename the laradock folders to unique name in each project, 
 1 - Clone this repository anywhere on your machine:
 
 ```bash
-git clone https://github.com.cnpmjs.org/laradock/laradock.git
+git clone https://github.com/laradock/laradock.git
 ```
 
 Your folder structure should look like this:
@@ -95,7 +95,7 @@ Make sure to replace `project-z` with your project folder name.
 1 - Clone this repository anywhere on your machine (similar to [Steps A.2. from above](#A2)):
 
 ```bash
-git clone https://github.com.cnpmjs.org/laradock/laradock.git
+git clone https://github.com/laradock/laradock.git
 ```
 
 Your folder structure should look like this:
@@ -143,7 +143,7 @@ If you use Chrome 63 or above for development, don't use `.dev`. [Why?](https://
 If you are using **Docker Toolbox** (VM), do one of the following:
 
 - Upgrade to Docker [Native](https://www.docker.com/products/docker) for Mac/Windows (Recommended). Check out [Upgrading Laradock](/documentation/#upgrading-laradock)
-- Use Laradock v3.\*. Visit the [Laradock-ToolBox](https://github.com.cnpmjs.org/laradock/laradock/tree/LaraDock-ToolBox) branch. _(outdated)_
+- Use Laradock v3.\*. Visit the [Laradock-ToolBox](https://github.com/laradock/laradock/tree/LaraDock-ToolBox) branch. _(outdated)_
 
 <br>
 

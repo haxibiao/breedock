@@ -17,7 +17,7 @@ googleAnalytics = "UA-37514928-9"
 
 	# Repository
 	provider = ""
-	repo_url = "https://github.com.cnpmjs.org/laradock/laradock"
+	repo_url = "https://github.com/laradock/laradock"
 
 	version = ""
 	logo = "images/favicons/ms-icon-310x310.png"

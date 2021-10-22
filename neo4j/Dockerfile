@@ -14,7 +14,7 @@ COPY ./local-package/* /tmp/
 
 RUN apt update \
      && apt install -y curl wget gosu jq \
-     && curl -L --fail --silent --show-error "https://github.com.cnpmjs.org/krallin/tini/releases/download/${TINI_VERSION}/tini" > /sbin/tini \
+     && curl -L --fail --silent --show-error "https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini" > /sbin/tini \
      && echo "${TINI_SHA256}  /sbin/tini" | sha256sum -c --strict --quiet \
      && chmod +x /sbin/tini \
      && curl --fail --silent --show-error --location --remote-name ${NEO4J_URI} \

@@ -46,7 +46,7 @@ nvm_source() {
     if [ "_$NVM_METHOD" = "_script" ]; then
       NVM_SOURCE_URL="https://raw.githubusercontent.com/creationix/nvm/$(nvm_latest_version)/nvm.sh"
     elif [ "_$NVM_METHOD" = "_git" ] || [ -z "$NVM_METHOD" ]; then
-      NVM_SOURCE_URL="https://github.com.cnpmjs.org/creationix/nvm.git"
+      NVM_SOURCE_URL="https://github.com/creationix/nvm.git"
     else
       echo >&2 "Unexpected value \"$NVM_METHOD\" for \$NVM_METHOD"
       return 1
