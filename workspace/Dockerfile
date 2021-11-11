@@ -1208,14 +1208,15 @@ ARG IMAGEMAGICK_VERSION=latest
 ENV IMAGEMAGICK_VERSION ${IMAGEMAGICK_VERSION}
 
 RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
+  export GIT_SSL_NO_VERIFY=1  && \
   apt-get install -y libmagickwand-dev imagemagick && \
   if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
   apt-get install -y git && \
   cd /tmp && \
   if [ ${IMAGEMAGICK_VERSION} = "latest" ]; then \
-  git clone https://github.com/Imagick/imagick; \
+  git clone https://github.com.cnpmjs.org/Imagick/imagick; \
   else \
-  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com/Imagick/imagick; \
+  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com.cnpmjs.org/Imagick/imagick; \
   fi && \
   cd imagick && \
   phpize && \
