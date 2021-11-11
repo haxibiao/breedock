@@ -724,8 +724,8 @@ ENV NVM_NODEJS_ORG_MIRROR ${NVM_NODEJS_ORG_MIRROR}
 
 RUN if [ ${INSTALL_NODE} = true ]; then \
   # Install nvm (A Node Version Manager)
-  mkdir -p $NVM_DIR && \
-  bash /var/build/install_nvm.sh \
+  mkdir -p $NVM_DIR \
+  && if [ ${CHANGE_SOURCE} = true ]; then bash /var/build/install_nvm_zh.sh ;else  bash /var/build/install_nvm.sh ;fi \
   # curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash \
   && . $NVM_DIR/nvm.sh \
   && nvm install ${NODE_VERSION} \
@@ -1569,7 +1569,7 @@ RUN if [ ${SHELL_OH_MY_ZSH} = true ]; then \
   bindkey "^[[6~" down-line-or-history\n\
   bindkey "^?" backward-delete-char\n' >> /home/laradock/.zshrc && \
   if [ ${SHELL_OH_MY_ZSH_AUTOSUGESTIONS} = true ]; then \
-  sh -c "export GIT_SSL_NO_VERIFY=1 && git clone https://github.com/zsh-users/zsh-autosuggestions /home/laradock/.oh-my-zsh/custom/plugins/zsh-autosuggestions" && \
+  sh -c "export GIT_SSL_NO_VERIFY=1 && git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions /home/laradock/.oh-my-zsh/custom/plugins/zsh-autosuggestions" && \
   sed -i 's~plugins=(~plugins=(zsh-autosuggestions ~g' /home/laradock/.zshrc && \
   sed -i '1iZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20' /home/laradock/.zshrc && \
   sed -i '1iZSH_AUTOSUGGEST_STRATEGY=(history completion)' /home/laradock/.zshrc && \
