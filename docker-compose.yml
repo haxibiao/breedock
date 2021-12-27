@@ -419,8 +419,8 @@ services:
       - ${NGINX_HOST_LOG_PATH}:/var/log/nginx
       - ${NGINX_SITES_PATH}:/etc/nginx/sites-available
       - ${NGINX_SSL_PATH}:/etc/nginx/ssl
-      - ${NGINX_ENABLE_PATH}:/etc/breeze/nginx/enable
-      - ./nginx/enable/:/etc/nginx/enable
+      - ${NGINX_ENABLE_PATH}:/etc/nginx/enable
+      - ./nginx/enabled/:/etc/nginx/enabled
       - ./data/certbot/certs/:/var/certs
       - ./certbot/letsencrypt/:/var/www/letsencrypt
     ports:
