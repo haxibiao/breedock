@@ -13,12 +13,12 @@ ARG CHANGE_SOURCE=false
 RUN if [ ${CHANGE_SOURCE} = true ]; then \
     # Change application source from dl-cdn.alpinelinux.org to aliyun source
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories \
-;fi
+    ;fi
 
 RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
+    python3 \
+    python3-dev \
+    py3-pip \
     build-base
 
 RUN npm install
