@@ -1214,9 +1214,9 @@ RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
   apt-get install -y git && \
   cd /tmp && \
   if [ ${IMAGEMAGICK_VERSION} = "latest" ]; then \
-  git clone https://github.com.cnpmjs.org/Imagick/imagick; \
+  git clone https://github.com/Imagick/imagick; \
   else \
-  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com.cnpmjs.org/Imagick/imagick; \
+  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com/Imagick/imagick; \
   fi && \
   cd imagick && \
   phpize && \
@@ -1570,7 +1570,7 @@ RUN if [ ${SHELL_OH_MY_ZSH} = true ]; then \
   bindkey "^[[6~" down-line-or-history\n\
   bindkey "^?" backward-delete-char\n' >> /home/laradock/.zshrc && \
   if [ ${SHELL_OH_MY_ZSH_AUTOSUGESTIONS} = true ]; then \
-  sh -c "export GIT_SSL_NO_VERIFY=1 && git clone https://github.com.cnpmjs.org/zsh-users/zsh-autosuggestions /home/laradock/.oh-my-zsh/custom/plugins/zsh-autosuggestions" && \
+  sh -c "export GIT_SSL_NO_VERIFY=1 && git clone https://github.com/zsh-users/zsh-autosuggestions /home/laradock/.oh-my-zsh/custom/plugins/zsh-autosuggestions" && \
   sed -i 's~plugins=(~plugins=(zsh-autosuggestions ~g' /home/laradock/.zshrc && \
   sed -i '1iZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20' /home/laradock/.zshrc && \
   sed -i '1iZSH_AUTOSUGGEST_STRATEGY=(history completion)' /home/laradock/.zshrc && \

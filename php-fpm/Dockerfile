@@ -763,9 +763,9 @@ RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
   if [ $(php -r "echo PHP_MAJOR_VERSION;") = "8" ]; then \
   cd /tmp && export GIT_SSL_NO_VERIFY=1  && \
   if [ ${IMAGEMAGICK_VERSION} = "latest" ]; then \
-  git clone https://github.com.cnpmjs.org/Imagick/imagick; \
+  git clone https://github.com/Imagick/imagick; \
   else \
-  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com.cnpmjs.org/Imagick/imagick; \
+  git clone --branch ${IMAGEMAGICK_VERSION} https://github.com/Imagick/imagick; \
   fi && \
   cd imagick && \
   phpize && \
